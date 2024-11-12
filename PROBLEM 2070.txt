@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<int> maximumBeauty(vector<vector<int>>& items, vector<int>& queries) {
+        vector <int> result;
+        for(int query: queries)
+        {
+            int maxbeauty=0;
+
+            for(const auto & item:items)
+            {
+                int price=item[0];
+                int beauty =item[1];
+
+                if(price <= query)
+                {
+                    maxbeauty =max(maxbeauty, beauty);
+                
+                }
+            }
+            result.push_back(maxbeauty);
+        }
+        return result;
+    }
+};
